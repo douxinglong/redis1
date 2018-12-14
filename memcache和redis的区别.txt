@@ -1,0 +1,17 @@
+memcache和redis的区别
+1：memcache和redis都是将数据存储到内存中，都是内存数据库，不过memcache还可以缓存其他东西，图片视频等。
+
+2：存储类型不同，memcache只支持k-v结构，redis支持五种数据类似，字符串，链表，哈希，集合，有序集合。
+
+3：虚拟内存，当redis物理内存使用完后，可以将一些很久没有使用过的value交换到磁盘、
+
+4：分布式设定memcache集群，利用magenta做一主多从，redis可以做一主多从，也可以一主一从。
+
+5：存储数据redis持久化，memcache关机后数据消失
+
+6：数据恢复，memcache挂掉后，数据不可恢复，redis数据丢失后可以通过AOF日志恢复。
+
+7：应用场景不同，redis除啦作为数据库使用之外，还能做消息队列，数据堆栈和数据缓存等，memcache适用于缓存sql语句，数据集，用户临时性数据，延迟查询数据 session等
+redis应用场景：
+查询数据多的页面做缓存比如页面缓存首页
+memcache
